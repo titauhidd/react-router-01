@@ -4,9 +4,8 @@ import Header from "../Header/Header";
 
 const Home = () => {
   return (
-    <div>
-      <p>This is my Homeee</p>
-      <Header></Header>
+    <div className="text-center ">
+      <Header> </Header>
       <Outlet></Outlet>
     </div>
   );
