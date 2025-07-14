@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const User = ({ user }) => {
   const { id, name, email, phone } = user;
@@ -8,6 +9,8 @@ const User = ({ user }) => {
       <p>Name: {name}</p>
       <p>Email: {email}</p>
       <p>Phone No: {phone}</p>
+      <Link to={`/user/${id}`}>Show Details</Link>
+      {/* --individual id show kortese dynamically */}
     </div>
   );
 };
