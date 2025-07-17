@@ -1,12 +1,20 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet, useLocation, useNavigation } from "react-router";
 import Header from "../Header/Header";
 
 const Home = () => {
+  const navigation = useNavigation();
+  console.log(navigation);
+  const location = useLocation();
+  console.log(location);
   return (
     <div className="text-center ">
       <Header> </Header>
-      <Outlet></Outlet>
+      {navigation.state === "loading" ? (
+        <p>Loading..!!!!</p>
+      ) : (
+        <Outlet></Outlet>
+      )}
     </div>
   );
 };
